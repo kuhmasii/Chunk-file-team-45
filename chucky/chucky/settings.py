@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'shredit.apps.ShreditConfig',
     'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -113,9 +114,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_KEY')
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_SECRET')
-
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/dashboard/'
+SOCIAL_AUTH_LOGIN_URL = '/author/login/'
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -143,6 +143,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = 'uploads/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -164,6 +165,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST_USER= config('EMAIL_HOST_USER')
 # EMAIL_HOST_PASSWORD= config('EMAIL_HOST_PASSWORD')
 # RECIPIENT_ADDRESS=config('RECIPIENT_ADDRESS')
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_SECRET')
 
 # for production mode
 if config('PROD') == 'YES':
