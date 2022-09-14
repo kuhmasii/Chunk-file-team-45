@@ -69,3 +69,6 @@ chucky_env
 # media
 media
 iOTA-asserts
+
+cert.crt
+cert.key
