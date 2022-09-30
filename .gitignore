@@ -51,6 +51,8 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+Pipfile.lock
+Pipfile
 
 # Translations
 *.mo
@@ -68,7 +70,7 @@ chucky_env
 
 # media
 media
-iOTA-asserts
+
 
 cert.crt
 cert.key

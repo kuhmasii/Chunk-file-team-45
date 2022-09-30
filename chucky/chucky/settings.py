@@ -127,6 +127,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+DEFAULT_FROM_EMAIL = config('FROM')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -158,13 +159,12 @@ MESSAGE_TAGS = {
     messages.ERROR: 'error',
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_HOST= config('EMAIL_HOST')
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER= config('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD= config('EMAIL_HOST_PASSWORD')
-# RECIPIENT_ADDRESS=config('RECIPIENT_ADDRESS')
+EMAIL_HOST= config('EMAIL_HOST')
+EMAIL_PORT = 25
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER= config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD= config('EMAIL_HOST_PASSWORD')
+FROM= config('FROM')
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_SECRET')
 

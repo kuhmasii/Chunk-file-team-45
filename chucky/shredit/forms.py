@@ -31,10 +31,10 @@ class ContactForm(forms.Form):
         msg = self.get_info()
         try:
             send_mail(
-                subject="Hello, I need help.",
+                subject="Hello :)",
                 message=msg,
-                from_email='admin@mail.com',
-                recipient_list=['olaisaiah54@gmail.com', ]
+                from_email=settings.FROM,
+                recipient_list=[settings.FROM]
             )
             return True
         except:
